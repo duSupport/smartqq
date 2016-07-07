@@ -14,30 +14,70 @@ import lombok.Data;
 @Data
 public class GroupMessage {
 
-    private long groupId;
+	private long groupId;
 
-    private long time;
+	private long time;
 
-    private String content;
+	private String content;
 
-    private long userId;
+	private long userId;
 
-    private Font font;
+	private Font font;
 
-    public GroupMessage(JSONObject json) {
-        JSONArray cont = json.getJSONArray("content");
-        this.font = cont.getJSONArray(0).getObject(1, Font.class);
+	public GroupMessage(JSONObject json) {
+		JSONArray cont = json.getJSONArray("content");
+		this.font = cont.getJSONArray(0).getObject(1, Font.class);
 
-        final int size = cont.size();
-        final StringBuilder contentBuilder = new StringBuilder();
-        for (int i = 1; i < size; i++) {
-            contentBuilder.append(cont.getString(i));
-        }
-        this.content = contentBuilder.toString();
+		final int size = cont.size();
+		final StringBuilder contentBuilder = new StringBuilder();
+		for (int i = 1; i < size; i++) {
+			contentBuilder.append(cont.getString(i));
+		}
+		this.content = contentBuilder.toString();
 
-        this.time = json.getLongValue("time");
-        this.groupId = json.getLongValue("group_code");
-        this.userId = json.getLongValue("send_uin");
-    }
+		this.time = json.getLongValue("time");
+		this.groupId = json.getLongValue("group_code");
+		this.userId = json.getLongValue("send_uin");
+	}
+
+	public long getGroupId() {
+		return groupId;
+	}
+
+	public void setGroupId(long groupId) {
+		this.groupId = groupId;
+	}
+
+	public long getTime() {
+		return time;
+	}
+
+	public void setTime(long time) {
+		this.time = time;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(long userId) {
+		this.userId = userId;
+	}
+
+	public Font getFont() {
+		return font;
+	}
+
+	public void setFont(Font font) {
+		this.font = font;
+	}
 
 }

@@ -527,6 +527,7 @@ public class SmartQQClient implements Closeable {
             throw new RuntimeException(String.format("请求失败，Http返回码[%d]", response.getStatusCode()));
         }
         JSONObject json = JSON.parseObject(response.getBody());
+        System.out.println(json);
         Integer retCode = json.getInteger("retcode");
         if (retCode == null || retCode != 0) {
             if (retCode != null && retCode == 103) {
