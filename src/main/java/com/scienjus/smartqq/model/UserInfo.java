@@ -1,6 +1,7 @@
 package com.scienjus.smartqq.model;
 
 import com.alibaba.fastjson.annotation.JSONField;
+
 import lombok.Data;
 
 /**
@@ -10,7 +11,7 @@ import lombok.Data;
  * @date 2015/12/24.
  */
 @Data
-public class UserInfo {
+public class UserInfo implements IUser {
 
 	private Birthday birthday;
 
@@ -20,7 +21,7 @@ public class UserInfo {
 
 	private String college;
 
-	private String uin;
+	private Long uin;
 
 	private int blood;
 
@@ -50,6 +51,8 @@ public class UserInfo {
 	private String gender;
 
 	private String mobile;
+
+	private String markname;
 
 	public Birthday getBirthday() {
 		return birthday;
@@ -83,11 +86,11 @@ public class UserInfo {
 		this.college = college;
 	}
 
-	public String getUin() {
+	public Long getUin() {
 		return uin;
 	}
 
-	public void setUin(String uin) {
+	public void setUin(Long uin) {
 		this.uin = uin;
 	}
 
@@ -201,6 +204,14 @@ public class UserInfo {
 
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
+	}
+
+	public String getMarkname() {
+		return markname;
+	}
+
+	public void setMarkname(String markname) {
+		this.markname = markname;
 	}
 
 }

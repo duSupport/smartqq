@@ -33,7 +33,7 @@ public class Message {
 		}
 		this.content = contentBuilder.toString();
 
-		this.time = json.getLongValue("time");
+		this.time = json.getLongValue("time") * 1000;
 		this.userId = json.getLongValue("from_uin");
 	}
 

@@ -9,9 +9,9 @@ import lombok.Data;
  * @date 2015/12/24.
  */
 @Data
-public class DiscussUser {
+public class DiscussUser implements IUser {
 
-	private long uin;
+	private Long uin;
 
 	private String nick;
 
@@ -24,11 +24,11 @@ public class DiscussUser {
 		return "DiscussUser{" + "uin=" + uin + ", nick='" + nick + '\'' + ", clientType='" + clientType + '\'' + ", status='" + status + '\'' + '}';
 	}
 
-	public long getUin() {
+	public Long getUin() {
 		return uin;
 	}
 
-	public void setUin(long uin) {
+	public void setUin(Long uin) {
 		this.uin = uin;
 	}
 
