@@ -9,7 +9,7 @@ import lombok.Data;
  * @date 2015/12/24.
  */
 @Data
-public class GroupUser {
+public class GroupUser implements IUser {
 
 	private String nick;
 
@@ -17,7 +17,7 @@ public class GroupUser {
 
 	private String gender;
 
-	private long uin;
+	private Long uin;
 
 	private String country;
 
@@ -57,11 +57,11 @@ public class GroupUser {
 		this.gender = gender;
 	}
 
-	public long getUin() {
+	public Long getUin() {
 		return uin;
 	}
 
-	public void setUin(long uin) {
+	public void setUin(Long uin) {
 		this.uin = uin;
 	}
 

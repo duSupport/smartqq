@@ -25,6 +25,7 @@ public class GroupMessage {
 	private Font font;
 
 	public GroupMessage(JSONObject json) {
+		System.out.println(json);
 		JSONArray cont = json.getJSONArray("content");
 		this.font = cont.getJSONArray(0).getObject(1, Font.class);
 
@@ -35,7 +36,7 @@ public class GroupMessage {
 		}
 		this.content = contentBuilder.toString();
 
-		this.time = json.getLongValue("time");
+		this.time = json.getLongValue("time") * 1000;
 		this.groupId = json.getLongValue("group_code");
 		this.userId = json.getLongValue("send_uin");
 	}
